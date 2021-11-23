@@ -11,10 +11,10 @@ namespace InfirmerieBLL
 {
     public class GestionEleves
     {
-        private static GestionEleves uneGestionEleves; // objet BLL
+        private static GestionEleve uneGestionEleves; // objet BLL
 
         // Accesseur en lecture
-        public static GestionEleves GetGestionEleves()
+        public static GestionInfirmerie GetGestionEleves()
         {
             if (uneGestionEleves == null)
             {
@@ -32,23 +32,23 @@ namespace InfirmerieBLL
         // Méthode qui renvoit une List d'objets Eleve en faisant appel à la méthode GetUtilisateurs() de la DAL
         public static List<Eleve> GetEleves()
         {
-            return EleveDAO.GetEleves();
+            return InfirmerieDAO.GetEleves();
         }
         // Méthode qui renvoi l’objet Utilisateur en l'ajoutant à la
         // BD avec la méthode AjoutEleve de la DAL
         public static int CreerEleve(Eleve ut)
         {
-            return EleveDAO.AjoutEleve(ut);
+            return InfirmerieDAO.AjoutEleve(ut);
         }
         // Méthode qui modifie un nouvel Utilisateur avec la méthode UpdateEleve de la DAL
         public static int ModifierEleve(Eleve ut)
         {
-            return EleveDAO.UpdateEleve(ut);
+            return InfirmerieDAO.UpdateEleve(ut);
         }
         // Méthode qui supprime un Utilisateur avec la méthode DeleteEleve de la DAL
         public static int SupprimerEleve(int id)
         {
-            return EleveDAO.DeleteEleve(id);
+            return InfirmerieDAO.DeleteEleve(id);
         }
     }
 }

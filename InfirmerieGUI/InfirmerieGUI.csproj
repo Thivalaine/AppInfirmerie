@@ -33,14 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="InfirmerieBLL">
-      <HintPath>..\InfirmerieBLL\bin\Debug\InfirmerieBLL.dll</HintPath>
-    </Reference>
-    <Reference Include="InfirmerieBO">
-      <HintPath>..\InfirmerieBO\bin\Debug\InfirmerieBO.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,25 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ModuleDeSaisieEleve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleDeSaisieEleve.Designer.cs">
+      <DependentUpon>ModuleDeSaisieEleve.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Module de saisie d%27élève.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Module de saisie d%27élève.Designer.cs">
-      <DependentUpon>Module de saisie d%27élève.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ModuleDeSaisieEleve.resx">
+      <DependentUpon>ModuleDeSaisieEleve.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Module de saisie d%27élève.resx">
-      <DependentUpon>Module de saisie d%27élève.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

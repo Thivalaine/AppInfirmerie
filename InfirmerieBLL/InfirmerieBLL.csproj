@@ -31,14 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="InfirmerieBO">
-      <HintPath>..\InfirmerieBO\bin\Debug\InfirmerieBO.dll</HintPath>
-    </Reference>
-    <Reference Include="InfirmerieDAL">
-      <HintPath>..\InfirmerieDAL\bin\Debug\InfirmerieDAL.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
