@@ -34,7 +34,7 @@ namespace InfirmerieGUI
 
         private void btnAjoutEleve_Click(object sender, EventArgs e)
         {
-            ModuleDeSaisieEleve mse = new ModuleDeSaisieEleve();
+            Module_de_saisie_d_élève mse = new Module_de_saisie_d_élève();
             this.Hide();
             mse.Show();
         }
