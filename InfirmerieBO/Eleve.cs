@@ -18,9 +18,16 @@ namespace InfirmerieBO
         private bool Tiers_temps_exam_eleve;
         private string Commentaire_eleve;
 
-        public Eleve(string Nom_eleve)
+        public Eleve(int Id_classe, string Nom_eleve, string Prenom_eleve, int Date_nai_eleve, int num_tel_eleve, int num_tel_parent_eleve, bool tiers_temps_exam_eleve, string commentaire_eleve)
         {
+            Id_classe = Idc;
             Nom_eleve = Nom;
+            Prenom_eleve = Prenom;
+            Date_nai_eleve = Date_nai;
+            Num_tel_eleve = Num_tel;
+            Num_tel_parent_eleve = Num_tel_parent;
+            Tiers_temps_exam_eleve = Tiers_temps_exam;
+            Commentaire_eleve = Commentaire;
         }
 
         public Eleve(int Id, int Id_classe, string Nom_eleve, string Prenom_eleve, int Date_nai_eleve, int num_tel_eleve, int num_tel_parent_eleve, bool tiers_temps_exam_eleve, string commentaire_eleve)
