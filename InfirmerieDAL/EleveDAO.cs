@@ -48,7 +48,7 @@ namespace InfirmerieDAL
             {
                 id_eleve = Int32.Parse(monReader["Id_Eleve"].ToString());
                 id_classe = Int32.Parse(monReader["Id_Classe"].ToString());
-                date_nai_eleve = Int32.Parse(monReader["Date_Nai_Eleve"].ToString());
+                date_nai_eleve = (DateTime)monReader["Date_Nai_Eleve"];
                 num_tel_eleve = Int32.Parse(monReader["Num_Tel_Eleve"].ToString());
                 num_tel_parent_eleve = Int32.Parse(monReader["Num_Tel_Parent_Eleve"].ToString());
                 tiers_temps_exam_eleve = bool.Parse(monReader["Tiers_Temps_Exam_Eleve"].ToString());

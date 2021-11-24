@@ -12,13 +12,13 @@ namespace InfirmerieBO
         private int Id_classe;
         private string Nom_eleve;
         private string Prenom_eleve;
-        private int Date_nai_eleve;
+        private DateTime Date_nai_eleve;
         private int Num_tel_eleve;
         private int Num_tel_parent_eleve;
         private bool Tiers_temps_exam_eleve;
         private string Commentaire_eleve;
 
-        public Eleve(int Id_classe, string Nom_eleve, string Prenom_eleve, int Date_nai_eleve, int num_tel_eleve, int num_tel_parent_eleve, bool tiers_temps_exam_eleve, string commentaire_eleve)
+        public Eleve(int Id_classe, string Nom_eleve, string Prenom_eleve, DateTime Date_nai_eleve, int num_tel_eleve, int num_tel_parent_eleve, bool tiers_temps_exam_eleve, string commentaire_eleve)
         {
             Id_classe = Idc;
             Nom_eleve = Nom;
@@ -30,7 +30,7 @@ namespace InfirmerieBO
             Commentaire_eleve = Commentaire;
         }
 
-        public Eleve(int Id, int Id_classe, string Nom_eleve, string Prenom_eleve, int Date_nai_eleve, int num_tel_eleve, int num_tel_parent_eleve, bool tiers_temps_exam_eleve, string commentaire_eleve)
+        public Eleve(int Id, int Id_classe, string Nom_eleve, string Prenom_eleve, DateTime Date_nai_eleve, int num_tel_eleve, int num_tel_parent_eleve, bool tiers_temps_exam_eleve, string commentaire_eleve)
         {
             Id_eleve = Id;
             Id_classe = Idc;
@@ -47,7 +47,7 @@ namespace InfirmerieBO
         public int Idc { get => Id_classe; set => Id_classe = value;  }
         public string Nom { get => Nom_eleve; set => Nom_eleve = value; }
         public string Prenom { get => Prenom_eleve; set => Prenom_eleve = value; }
-        public int Date_nai { get => Date_nai_eleve; set => Date_nai_eleve = value; }
+        public DateTime Date_nai { get => Date_nai_eleve; set => Date_nai_eleve = value; }
         public int Num_tel { get => Num_tel_eleve; set => Num_tel_eleve = value; }
         public int Num_tel_parent { get => Num_tel_parent_eleve; set => Num_tel_parent_eleve = value; }
         public bool Tiers_temps_exam { get => Tiers_temps_exam_eleve; set => Tiers_temps_exam_eleve = value; }

@@ -70,9 +70,13 @@ namespace InfirmerieGUI
         {
             if (radioTiersTempsOui.Checked)
             {
+                 DateTime dt = saisieDateEleve.Value;
+                string dtS = dt.Year.ToString() + dt.Month.ToString() + dt.Day.ToString();
+                // you can just convert it to integer if there is a constraint
+                int dtI = Convert.ToInt32(dtS);
                 
                 // Création de l'objet Utilisateur avec le nom récupéré dans la GUI
-                Eleve uti = new Eleve(Convert.ToInt32(saisieClasse.Text), saisieNom.Text, saisiePrenom.Text, Convert.ToInt32(saisieDateEleve.Text), Convert.ToInt32(saisieNumTel.Text), Convert.ToInt32(saisieNumTelParent.Text), Convert.ToBoolean(radioTiersTempsOui.Text), saisieCommentaireSante.Text);
+                Eleve uti = new Eleve(Int32.Parse(saisieClasse.Text), saisieNom.Text, saisiePrenom.Text, dtI, Int32.Parse(saisieNumTel.Text), Int32.Parse(saisieNumTelParent.Text), true, saisieCommentaireSante.Text);
                 // Appel de la méthode CreerUtilisateur de la couche BLL
                 GestionEleves.CreerEleve(uti);
                 MessageBox.Show("L'élève " + saisieNom + " " + saisiePrenom + "a bien été enregistré(e)");
@@ -80,9 +84,14 @@ namespace InfirmerieGUI
             }
             else
             {
+                 DateTime dt = saisieDateEleve.Value;
+                 string dtS = dt.Year.ToString() + dt.Month.ToString() + dt.Day.ToString();
+                // you can just convert it to integer if there is a constraint
+                int dtI = Convert.ToInt32(dtS);
+
                 
                 // Création de l'objet Utilisateur avec le nom récupéré dans la GUI
-                Eleve uti = new Eleve(Convert.ToInt32(saisieClasse.Text), saisieNom.Text, saisiePrenom.Text, Convert.ToInt32(saisieDateEleve.Text), Convert.ToInt32(saisieNumTel.Text), Convert.ToInt32(saisieNumTelParent.Text), Convert.ToBoolean(radioTiersTempsNon.Text), saisieCommentaireSante.Text);
+                Eleve uti = new Eleve(Int32.Parse(saisieClasse.Text), saisieNom.Text, saisiePrenom.Text, dtI, Int32.Parse(saisieNumTel.Text), Int32.Parse(saisieNumTelParent.Text), false, saisieCommentaireSante.Text);
                 // Appel de la méthode CreerUtilisateur de la couche BLL
                 GestionEleves.CreerEleve(uti);
                 MessageBox.Show("L'élève " + saisieNom + " " + saisiePrenom + "a bien été enregistré(e)");
