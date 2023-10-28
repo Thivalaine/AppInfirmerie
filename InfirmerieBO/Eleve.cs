@@ -8,49 +8,60 @@ namespace InfirmerieBO
 {
     public class Eleve
     {
-        private int Id_eleve;
-        private int Id_classe;
-        private string Nom_eleve;
-        private string Prenom_eleve;
-        private DateTime Date_nai_eleve;
-        private int Num_tel_eleve;
-        private int Num_tel_parent_eleve;
-        private bool Tiers_temps_exam_eleve;
-        private string Commentaire_eleve;
+        private int id_eleve;
+        private Classe id_classe;
+        private string nom_eleve;
+        private string prenom_eleve;
+        private DateTime date_nai_eleve;
+        private int num_tel_eleve;
+        private int num_tel_parent_eleve;
+        private bool tiers_temps_exam_eleve;
+        private string commentaire_eleve;
 
-        public Eleve(int Id_classe, string Nom_eleve, string Prenom_eleve, DateTime Date_nai_eleve, int num_tel_eleve, int num_tel_parent_eleve, bool tiers_temps_exam_eleve, string commentaire_eleve)
+        public Eleve(Classe Id_classe, string Nom, string Prenom, DateTime Date_nai, int Num_tel, int Num_tel_parent, bool Tiers_temps_exam, string Commentaire)
         {
-            Id_classe = Idc;
-            Nom_eleve = Nom;
-            Prenom_eleve = Prenom;
-            Date_nai_eleve = Date_nai;
-            Num_tel_eleve = Num_tel;
-            Num_tel_parent_eleve = Num_tel_parent;
-            Tiers_temps_exam_eleve = Tiers_temps_exam;
-            Commentaire_eleve = Commentaire;
+            id_classe = Id_classe;
+            nom_eleve = Nom;
+            prenom_eleve = Prenom;
+            date_nai_eleve = Date_nai;
+            num_tel_eleve = Num_tel;
+            num_tel_parent_eleve = Num_tel_parent;
+            tiers_temps_exam_eleve = Tiers_temps_exam;
+            commentaire_eleve = Commentaire;
         }
 
-        public Eleve(int Id, int Id_classe, string Nom_eleve, string Prenom_eleve, DateTime Date_nai_eleve, int num_tel_eleve, int num_tel_parent_eleve, bool tiers_temps_exam_eleve, string commentaire_eleve)
+        public Eleve(int Id, Classe Id_classe, string Nom, string Prenom, DateTime Date_nai, int Num_tel, int Num_tel_parent, bool Tiers_temps_exam, string Commentaire)
         {
-            Id_eleve = Id;
-            Id_classe = Idc;
-            Nom_eleve = Nom;
-            Prenom_eleve = Prenom;
-            Date_nai_eleve = Date_nai;
-            Num_tel_eleve = Num_tel;
-            Num_tel_parent_eleve = Num_tel_parent;
-            Tiers_temps_exam_eleve = Tiers_temps_exam;
-            Commentaire_eleve = Commentaire;
+            id_eleve = Id;
+            id_classe = Id_classe;
+            nom_eleve = Nom;
+            prenom_eleve = Prenom;
+            date_nai_eleve = Date_nai;
+            num_tel_eleve = Num_tel;
+            num_tel_parent_eleve = Num_tel_parent;
+            tiers_temps_exam_eleve = Tiers_temps_exam;
+            commentaire_eleve = Commentaire;
         }
 
-        public int Id { get => Id_eleve; set => Id_eleve = value; }
-        public int Idc { get => Id_classe; set => Id_classe = value;  }
-        public string Nom { get => Nom_eleve; set => Nom_eleve = value; }
-        public string Prenom { get => Prenom_eleve; set => Prenom_eleve = value; }
-        public DateTime Date_nai { get => Date_nai_eleve; set => Date_nai_eleve = value; }
-        public int Num_tel { get => Num_tel_eleve; set => Num_tel_eleve = value; }
-        public int Num_tel_parent { get => Num_tel_parent_eleve; set => Num_tel_parent_eleve = value; }
-        public bool Tiers_temps_exam { get => Tiers_temps_exam_eleve; set => Tiers_temps_exam_eleve = value; }
-        public string Commentaire { get => Commentaire_eleve; set => Commentaire_eleve = value; }
+        public Eleve(string Nom)
+        {
+            nom_eleve = Nom;
+        }
+
+        public override string ToString()
+        {
+            return nom_eleve;
+        }
+
+
+        public int Id { get => id_eleve; set => id_eleve = value; }
+        public Classe Classe { get => id_classe; set => id_classe = value;  }
+        public string Nom { get => nom_eleve; set => nom_eleve = value; }
+        public string Prenom { get => prenom_eleve; set => prenom_eleve = value; }
+        public DateTime Date_nai { get => date_nai_eleve; set => date_nai_eleve = value; }
+        public int Num_tel { get => num_tel_eleve; set => num_tel_eleve = value; }
+        public int Num_tel_parent { get => num_tel_parent_eleve; set => num_tel_parent_eleve = value; }
+        public bool Tiers_temps_exam { get => tiers_temps_exam_eleve; set => tiers_temps_exam_eleve = value; }
+        public string Commentaire { get => commentaire_eleve; set => commentaire_eleve = value; }
     }
 }

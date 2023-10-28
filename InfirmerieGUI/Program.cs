@@ -16,7 +16,8 @@ namespace InfirmerieGUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Module_de_saisie_d_élève());
+            Application.Run(new Authentification());
+
         }
     }
 }

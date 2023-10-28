@@ -2,25 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Configuration;
+using System.Threading.Tasks;
 using InfirmerieBO;
 using InfirmerieDAL;
-using System.Threading.Tasks;
+using System.Configuration;
 
 namespace InfirmerieBLL
 {
-    public class GestionEleves
+    public class GestionVisites
     {
-        private static GestionEleves uneGestionEleves; // objet BLL
+        private static GestionVisites uneGestionVisites; // objet BLL
 
         // Accesseur en lecture
-        public static GestionEleves GetGestionEleves()
+        public static GestionVisites GetGestionVisites()
         {
-            if (uneGestionEleves == null)
+            if (uneGestionVisites == null)
             {
-                uneGestionEleves = new GestionEleves();
+                uneGestionVisites = new GestionVisites();
             }
-            return uneGestionEleves;
+            return uneGestionVisites;
         }
 
         // Définit la chaîne de connexion grâce à la méthode SetchaineConnexion de la DAL
@@ -30,25 +30,20 @@ namespace InfirmerieBLL
             ConnexionBD.GetConnexionBD().SetchaineConnexion(chaine);
         }
         // Méthode qui renvoit une List d'objets Eleve en faisant appel à la méthode GetUtilisateurs() de la DAL
-        public static List<Eleve> GetEleves()
+        public static List<Visite> GetVisites()
         {
-            return EleveDAO.GetEleves();
+            return VisiteDAO.GetVisites();
         }
         // Méthode qui renvoi l’objet Utilisateur en l'ajoutant à la
         // BD avec la méthode AjoutEleve de la DAL
-        public static int CreerEleve(Eleve ut)
+        public static int CreerVisite(Visite uneVisite)
         {
-            return EleveDAO.AjoutEleve(ut);
+            return VisiteDAO.AjoutVisite(uneVisite);
         }
         // Méthode qui modifie un nouvel Utilisateur avec la méthode UpdateEleve de la DAL
-        public static int ModifierEleve(Eleve unEleve)
+        public static int ModifierVisite(Visite uneVisite)
         {
-            return EleveDAO.ModifierEleve(unEleve);
-        }
-        // Méthode qui supprime un Utilisateur avec la méthode DeleteEleve de la DAL
-        public static int SupprimerEleve(Eleve unEleve)
-        {
-            return EleveDAO.SupprimerEleve(unEleve);
+            return VisiteDAO.ModifierVisite(uneVisite);
         }
 
         public static List<Classe> GetClasses()
@@ -56,5 +51,14 @@ namespace InfirmerieBLL
             return EleveDAO.GetClasses();
         }
 
+        public static List<Eleve> GetEleves()
+        {
+            return EleveDAO.GetEleves();
+        }
+
+        public static List<Medicament> GetMedicaments()
+        {
+            return MedicamentDAO.GetMedicaments();
+        }
     }
 }

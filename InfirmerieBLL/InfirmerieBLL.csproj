@@ -31,10 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="InfirmerieBO">
+    <Reference Include="InfirmerieBO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\InfirmerieBO\bin\Debug\InfirmerieBO.dll</HintPath>
     </Reference>
-    <Reference Include="InfirmerieDAL">
+    <Reference Include="InfirmerieDAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\InfirmerieDAL\bin\Debug\InfirmerieDAL.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -49,7 +51,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GestionEleve.cs" />
+    <Compile Include="GestionMedicament.cs" />
+    <Compile Include="GestionPrescription.cs" />
+    <Compile Include="GestionVisite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

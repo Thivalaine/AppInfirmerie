@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +32,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="InfirmerieBLL">
@@ -53,6 +57,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authentification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authentification.Designer.cs">
+      <DependentUpon>Authentification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Liste des élèves.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liste des élèves.Designer.cs">
+      <DependentUpon>Liste des élèves.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,13 +81,55 @@
     <Compile Include="Module de saisie d%27élève.Designer.cs">
       <DependentUpon>Module de saisie d%27élève.cs</DependentUpon>
     </Compile>
+    <Compile Include="Module de saisie de médicaments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module de saisie de médicaments.Designer.cs">
+      <DependentUpon>Module de saisie de médicaments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module de saisie des visites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module de saisie des visites.Designer.cs">
+      <DependentUpon>Module de saisie des visites.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vue des médicaments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue des médicaments.Designer.cs">
+      <DependentUpon>Vue des médicaments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue des prescriptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue des prescriptions.Designer.cs">
+      <DependentUpon>Vue des prescriptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue des visites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue des visites.Designer.cs">
+      <DependentUpon>Vue des visites.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Authentification.resx">
+      <DependentUpon>Authentification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liste des élèves.resx">
+      <DependentUpon>Liste des élèves.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Module de saisie d%27élève.resx">
       <DependentUpon>Module de saisie d%27élève.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module de saisie de médicaments.resx">
+      <DependentUpon>Module de saisie de médicaments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Module de saisie des visites.resx">
+      <DependentUpon>Module de saisie des visites.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -83,6 +141,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Vue des médicaments.resx">
+      <DependentUpon>Vue des médicaments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vue des prescriptions.resx">
+      <DependentUpon>Vue des prescriptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vue des visites.resx">
+      <DependentUpon>Vue des visites.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\InfirmerieDAL.ConnexionBD.datasource" />
+    <None Include="Properties\DataSources\InfirmerieDAL.EleveDAO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -97,7 +166,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <None Include="Resources\16094.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InfirmerieDAL\InfirmerieDAL.csproj">
+      <Project>{cb5ce081-cad0-445c-8583-2f08ee2d9ae0}</Project>
+      <Name>InfirmerieDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medicament-risque-depression.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reforme-des-lycees-rentree-septembre-2019-1024x854-1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

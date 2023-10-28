@@ -47,22 +47,26 @@ namespace InfirmerieGUI
             this.saisieNumTelParent = new System.Windows.Forms.TextBox();
             this.boutonSoumettre = new System.Windows.Forms.Button();
             this.labelClasseEleve = new System.Windows.Forms.Label();
-            this.saisieClasse = new System.Windows.Forms.TextBox();
+            this.listeClasse = new System.Windows.Forms.ComboBox();
+            this.btnRetour = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // labelSaisieEleve
             // 
             this.labelSaisieEleve.AutoSize = true;
-            this.labelSaisieEleve.Location = new System.Drawing.Point(338, 41);
+            this.labelSaisieEleve.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSaisieEleve.Location = new System.Drawing.Point(110, 34);
             this.labelSaisieEleve.Name = "labelSaisieEleve";
-            this.labelSaisieEleve.Size = new System.Drawing.Size(87, 13);
+            this.labelSaisieEleve.Size = new System.Drawing.Size(217, 31);
             this.labelSaisieEleve.TabIndex = 0;
             this.labelSaisieEleve.Text = "Saisie d\'un élève";
             // 
             // labelNomEleve
             // 
             this.labelNomEleve.AutoSize = true;
-            this.labelNomEleve.Location = new System.Drawing.Point(214, 85);
+            this.labelNomEleve.Location = new System.Drawing.Point(53, 114);
             this.labelNomEleve.Name = "labelNomEleve";
             this.labelNomEleve.Size = new System.Drawing.Size(77, 13);
             this.labelNomEleve.TabIndex = 1;
@@ -71,7 +75,7 @@ namespace InfirmerieGUI
             // labelPrenomEleve
             // 
             this.labelPrenomEleve.AutoSize = true;
-            this.labelPrenomEleve.Location = new System.Drawing.Point(214, 130);
+            this.labelPrenomEleve.Location = new System.Drawing.Point(53, 159);
             this.labelPrenomEleve.Name = "labelPrenomEleve";
             this.labelPrenomEleve.Size = new System.Drawing.Size(91, 13);
             this.labelPrenomEleve.TabIndex = 2;
@@ -80,7 +84,7 @@ namespace InfirmerieGUI
             // labelDateNaissance
             // 
             this.labelDateNaissance.AutoSize = true;
-            this.labelDateNaissance.Location = new System.Drawing.Point(214, 214);
+            this.labelDateNaissance.Location = new System.Drawing.Point(53, 243);
             this.labelDateNaissance.Name = "labelDateNaissance";
             this.labelDateNaissance.Size = new System.Drawing.Size(96, 13);
             this.labelDateNaissance.TabIndex = 3;
@@ -89,16 +93,17 @@ namespace InfirmerieGUI
             // labelNumTel
             // 
             this.labelNumTel.AutoSize = true;
-            this.labelNumTel.Location = new System.Drawing.Point(209, 265);
+            this.labelNumTel.Location = new System.Drawing.Point(48, 294);
             this.labelNumTel.Name = "labelNumTel";
             this.labelNumTel.Size = new System.Drawing.Size(109, 13);
             this.labelNumTel.TabIndex = 4;
             this.labelNumTel.Text = "Numéro de téléphone";
+            this.labelNumTel.Click += new System.EventHandler(this.labelNumTel_Click);
             // 
             // labelNumTelParent
             // 
             this.labelNumTelParent.AutoSize = true;
-            this.labelNumTelParent.Location = new System.Drawing.Point(214, 306);
+            this.labelNumTelParent.Location = new System.Drawing.Point(53, 335);
             this.labelNumTelParent.Name = "labelNumTelParent";
             this.labelNumTelParent.Size = new System.Drawing.Size(167, 13);
             this.labelNumTelParent.TabIndex = 5;
@@ -107,7 +112,7 @@ namespace InfirmerieGUI
             // labelTiersTemps
             // 
             this.labelTiersTemps.AutoSize = true;
-            this.labelTiersTemps.Location = new System.Drawing.Point(215, 352);
+            this.labelTiersTemps.Location = new System.Drawing.Point(54, 381);
             this.labelTiersTemps.Name = "labelTiersTemps";
             this.labelTiersTemps.Size = new System.Drawing.Size(126, 13);
             this.labelTiersTemps.TabIndex = 6;
@@ -116,7 +121,7 @@ namespace InfirmerieGUI
             // radioTiersTempsOui
             // 
             this.radioTiersTempsOui.AutoSize = true;
-            this.radioTiersTempsOui.Location = new System.Drawing.Point(384, 347);
+            this.radioTiersTempsOui.Location = new System.Drawing.Point(223, 380);
             this.radioTiersTempsOui.Name = "radioTiersTempsOui";
             this.radioTiersTempsOui.Size = new System.Drawing.Size(41, 17);
             this.radioTiersTempsOui.TabIndex = 7;
@@ -128,7 +133,7 @@ namespace InfirmerieGUI
             // radioTiersTempsNon
             // 
             this.radioTiersTempsNon.AutoSize = true;
-            this.radioTiersTempsNon.Location = new System.Drawing.Point(457, 348);
+            this.radioTiersTempsNon.Location = new System.Drawing.Point(295, 380);
             this.radioTiersTempsNon.Name = "radioTiersTempsNon";
             this.radioTiersTempsNon.Size = new System.Drawing.Size(45, 17);
             this.radioTiersTempsNon.TabIndex = 8;
@@ -140,7 +145,7 @@ namespace InfirmerieGUI
             // labelCommentaire
             // 
             this.labelCommentaire.AutoSize = true;
-            this.labelCommentaire.Location = new System.Drawing.Point(214, 402);
+            this.labelCommentaire.Location = new System.Drawing.Point(53, 431);
             this.labelCommentaire.Name = "labelCommentaire";
             this.labelCommentaire.Size = new System.Drawing.Size(97, 13);
             this.labelCommentaire.TabIndex = 9;
@@ -148,16 +153,16 @@ namespace InfirmerieGUI
             // 
             // saisieCommentaireSante
             // 
-            this.saisieCommentaireSante.Location = new System.Drawing.Point(341, 399);
+            this.saisieCommentaireSante.Location = new System.Drawing.Point(180, 428);
             this.saisieCommentaireSante.Name = "saisieCommentaireSante";
-            this.saisieCommentaireSante.Size = new System.Drawing.Size(176, 83);
+            this.saisieCommentaireSante.Size = new System.Drawing.Size(200, 83);
             this.saisieCommentaireSante.TabIndex = 10;
             this.saisieCommentaireSante.Text = "";
             this.saisieCommentaireSante.TextChanged += new System.EventHandler(this.saisieCommentaireSante_TextChanged);
             // 
             // saisieNom
             // 
-            this.saisieNom.Location = new System.Drawing.Point(341, 82);
+            this.saisieNom.Location = new System.Drawing.Point(180, 111);
             this.saisieNom.Name = "saisieNom";
             this.saisieNom.Size = new System.Drawing.Size(100, 20);
             this.saisieNom.TabIndex = 11;
@@ -165,7 +170,7 @@ namespace InfirmerieGUI
             // 
             // saisiePrenom
             // 
-            this.saisiePrenom.Location = new System.Drawing.Point(341, 130);
+            this.saisiePrenom.Location = new System.Drawing.Point(180, 159);
             this.saisiePrenom.Name = "saisiePrenom";
             this.saisiePrenom.Size = new System.Drawing.Size(100, 20);
             this.saisiePrenom.TabIndex = 12;
@@ -173,7 +178,7 @@ namespace InfirmerieGUI
             // 
             // saisieDateEleve
             // 
-            this.saisieDateEleve.Location = new System.Drawing.Point(341, 214);
+            this.saisieDateEleve.Location = new System.Drawing.Point(180, 243);
             this.saisieDateEleve.Name = "saisieDateEleve";
             this.saisieDateEleve.Size = new System.Drawing.Size(200, 20);
             this.saisieDateEleve.TabIndex = 13;
@@ -181,7 +186,7 @@ namespace InfirmerieGUI
             // 
             // saisieNumTel
             // 
-            this.saisieNumTel.Location = new System.Drawing.Point(341, 265);
+            this.saisieNumTel.Location = new System.Drawing.Point(180, 294);
             this.saisieNumTel.Name = "saisieNumTel";
             this.saisieNumTel.Size = new System.Drawing.Size(122, 20);
             this.saisieNumTel.TabIndex = 14;
@@ -189,7 +194,7 @@ namespace InfirmerieGUI
             // 
             // saisieNumTelParent
             // 
-            this.saisieNumTelParent.Location = new System.Drawing.Point(395, 306);
+            this.saisieNumTelParent.Location = new System.Drawing.Point(234, 335);
             this.saisieNumTelParent.Name = "saisieNumTelParent";
             this.saisieNumTelParent.Size = new System.Drawing.Size(122, 20);
             this.saisieNumTelParent.TabIndex = 15;
@@ -197,7 +202,7 @@ namespace InfirmerieGUI
             // 
             // boutonSoumettre
             // 
-            this.boutonSoumettre.Location = new System.Drawing.Point(366, 531);
+            this.boutonSoumettre.Location = new System.Drawing.Point(305, 557);
             this.boutonSoumettre.Name = "boutonSoumettre";
             this.boutonSoumettre.Size = new System.Drawing.Size(75, 23);
             this.boutonSoumettre.TabIndex = 16;
@@ -208,26 +213,49 @@ namespace InfirmerieGUI
             // labelClasseEleve
             // 
             this.labelClasseEleve.AutoSize = true;
-            this.labelClasseEleve.Location = new System.Drawing.Point(214, 168);
+            this.labelClasseEleve.Location = new System.Drawing.Point(53, 197);
             this.labelClasseEleve.Name = "labelClasseEleve";
             this.labelClasseEleve.Size = new System.Drawing.Size(86, 13);
             this.labelClasseEleve.TabIndex = 17;
             this.labelClasseEleve.Text = "Classe de l\'élève";
             // 
-            // saisieClasse
+            // listeClasse
             // 
-            this.saisieClasse.Location = new System.Drawing.Point(341, 168);
-            this.saisieClasse.Name = "saisieClasse";
-            this.saisieClasse.Size = new System.Drawing.Size(100, 20);
-            this.saisieClasse.TabIndex = 18;
-            this.saisieClasse.TextChanged += new System.EventHandler(this.saisieClasse_TextChanged);
+            this.listeClasse.FormattingEnabled = true;
+            this.listeClasse.Location = new System.Drawing.Point(180, 196);
+            this.listeClasse.Name = "listeClasse";
+            this.listeClasse.Size = new System.Drawing.Size(121, 21);
+            this.listeClasse.TabIndex = 19;
+            this.listeClasse.SelectedIndexChanged += new System.EventHandler(this.listeClasse_SelectedIndexChanged);
+            // 
+            // btnRetour
+            // 
+            this.btnRetour.Location = new System.Drawing.Point(51, 557);
+            this.btnRetour.Name = "btnRetour";
+            this.btnRetour.Size = new System.Drawing.Size(75, 23);
+            this.btnRetour.TabIndex = 20;
+            this.btnRetour.Text = "Retour";
+            this.btnRetour.UseVisualStyleBackColor = true;
+            this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::InfirmerieGUI.Properties.Resources.reforme_des_lycees_rentree_septembre_2019_1024x854_1;
+            this.pictureBox5.Location = new System.Drawing.Point(132, 525);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(167, 74);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 21;
+            this.pictureBox5.TabStop = false;
             // 
             // Module_de_saisie_d_élève
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 611);
-            this.Controls.Add(this.saisieClasse);
+            this.ClientSize = new System.Drawing.Size(433, 611);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.btnRetour);
+            this.Controls.Add(this.listeClasse);
             this.Controls.Add(this.labelClasseEleve);
             this.Controls.Add(this.boutonSoumettre);
             this.Controls.Add(this.saisieNumTelParent);
@@ -248,6 +276,8 @@ namespace InfirmerieGUI
             this.Controls.Add(this.labelSaisieEleve);
             this.Name = "Module_de_saisie_d_élève";
             this.Text = "Module_de_saisie_d_élève";
+            this.Load += new System.EventHandler(this.Module_de_saisie_d_élève_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,6 +303,8 @@ namespace InfirmerieGUI
         private System.Windows.Forms.TextBox saisieNumTelParent;
         private System.Windows.Forms.Button boutonSoumettre;
         private System.Windows.Forms.Label labelClasseEleve;
-        private System.Windows.Forms.TextBox saisieClasse;
+        private System.Windows.Forms.ComboBox listeClasse;
+        private System.Windows.Forms.Button btnRetour;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
