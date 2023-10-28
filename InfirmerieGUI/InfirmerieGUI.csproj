@@ -38,7 +38,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="InfirmerieBLL">
-      <HintPath>..\InfirmerieBLL\bin\Debug\InfirmerieBLL.dll</HintPath>
+      <HintPath>..\InfirmerieBLL\obj\Debug\InfirmerieBLL.dll</HintPath>
     </Reference>
     <Reference Include="InfirmerieBO">
       <HintPath>..\InfirmerieBO\bin\Debug\InfirmerieBO.dll</HintPath>
